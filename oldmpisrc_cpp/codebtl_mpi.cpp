@@ -270,4 +270,3 @@ void freeMatrix2d(float **array)
     free(array[0]);
     free(array);
 }
-

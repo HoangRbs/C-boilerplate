@@ -40,6 +40,8 @@ int main (int argc, char **argv) {
     // }
 
     // outside of scope datas will be created and calculated for all processes
+    
+    
     // bai tap: tinh tong
 
     int m = 6;      // numProcess = 3 just take 6 / 3 = 2 elements per process for simplification.
@@ -95,7 +97,6 @@ int main (int argc, char **argv) {
         MPI_Recv(As, ms, MPI_INT, 0, id_process, MPI_COMM_WORLD, &thongbao);
         MPI_Recv(Bs, ms, MPI_INT, 0, id_process+100, MPI_COMM_WORLD, &thongbao);
     } */
-    
 
     // --> improved version using scatter
     MPI_Scatter(A, ms, MPI_INT, As, ms, MPI_INT , 0, MPI_COMM_WORLD);
@@ -132,7 +133,7 @@ int main (int argc, char **argv) {
     // }
 
     // --> improved using gather
-    // all process send Cs into C
+    // all process send Cs to process0 and merge into C
     MPI_Gather(Cs, ms, MPI_INT, C, ms, MPI_INT, 0, MPI_COMM_WORLD);
 
     if (id_process == 0) {
@@ -145,6 +146,7 @@ int main (int argc, char **argv) {
 
     MPI_Finalize();
     return 0;
+    
 }
 
 // mpicxx file.cpp

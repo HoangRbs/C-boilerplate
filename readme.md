@@ -8,15 +8,10 @@
 5. run ./HelloWorld
 
 
-
-
-
-
-
 --------------------------- MPI ------------------------------
 6. for building and running mpi source code "mpisrc"
 7. install mpi
-8. mpicxx file.cpp (build)
+8. for C++ file: mpicxx file.cpp (build) // for C file:  mpicc file.c
 9. mpirun -np 5 ./a.out (run), np là number of processor
 
 ----------------------------- OPEN MP ------------------------------

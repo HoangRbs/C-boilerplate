@@ -1,5 +1,4 @@
 // no paralell - do not show this file , build in terminal only
-// lươn :)))) che phần câu lệnh chạy mpi -np 1 để ko bị thấy :v --> cho cái terminal nó nhỏ lại
 
 // build bằng lệnh: 
 // mpicxx 'Main - test.cpp'
@@ -69,8 +68,6 @@ int main(int argc, char *argv[])
         
     } while (maxConDiff > tolerance);
 
-    // lươn :)))) che phần câu lệnh chạy mpi -np 1 để ko bị thấy :v
-    std::cout << std::endl << " ------------------------------------ WARNING: \n It appears that your OpenFabrics subsystem is configured to \n only allow registering part of your physical memory. \n This can cause MPI jobs to run with erratic performance, hang, and/or crash. \n This may be caused by your OpenFabrics vendor limiting the amount of physical \n memory that can be registered. You should investigate the relevant Linux kernel module parameters \n that control how much physical memory can be registered, \n and increase them to allow registering all physical memory on your machine. See this Open MPI FAQ item for more information \n on these Linux kernel module parameters: \n http://www.open-mpi.org/faq/?category=openfabrics#ib-.. Local host: node107 Registerable memory: 32768 MiB Total memory: \n 65459 MiB Your MPI job will continue, but may be behave poorly and or hang. \n --------------------------------------------------------------------------" << std::endl;
 
     DisplayMatrix(conMatx, N, M);
     freeMatrix2d(conMatx);

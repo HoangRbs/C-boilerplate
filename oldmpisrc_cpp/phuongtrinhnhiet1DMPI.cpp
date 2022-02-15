@@ -8,6 +8,8 @@
 #define dx 0.1
 #define D 0.1
 
+// làm tiếp dùng mpi khi truyền thông, sử dụng gather , scatter , các thứ
+
 void KhoiTao(float *T) {
     // thank kim loai 25 do c
     for (int i = 0; i < M; i++) {
